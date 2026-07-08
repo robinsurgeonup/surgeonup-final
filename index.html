@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SurgeonUp</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,900;1,900&display=swap" rel="stylesheet">
+<style>
+
+/* — ANIMATIONS — */
+
+@keyframes fadeUp60 {
+  from { opacity: 0; transform: translateY(2.344vw); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeUp20 {
+  from { opacity: 0; transform: translateY(0.781vw); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* — CSS VARIABLES — */
+
+:root {
+  --blue:        #3366ff;
+  --teal:        #33ffcc;
+  --light-teal:  #ccffff;
+  --purple:      #8224c6;
+  --navy:        #0d0d40;
+  --white:       #ffffff;
+  --font:        'Poppins', sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: var(--navy);
+  font-family: var(--font);
+  font-weight: 900;
+  overflow-x: hidden;
+}
+
+/* — HEADER — */
+
+.site-header {
+  background: var(--white);
+  width: 100%;
+  padding: 0.78vw 1.37vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1vw;
+}
+
+.logo-box {
+  flex-shrink: 0;
+  width: 11.72vw;
+  height: 7.81vw;
+  background: var(--white);
+  border: none;
+  border-radius: 0.625vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.logo-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.nav-center {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.3vw;
+  position: relative;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 3.28vw;
+  width: 100%;
+}
+
+.nav-links a {
+  color: var(--blue);
+  text-decoration: none;
+  font-size: 2.15vw;
+  font-weight: 900;
+  letter-spacing: 0.1vw;
+  -webkit-text-stroke: 0.05vw var(--purple);
+  transition: color 0.2s;
+}
+
+.nav-links a:hover { color: var(--teal); -webkit-text-stroke: 0.05vw var(--purple); }
+
+.nav-links a.active { color: var(--purple); -webkit-text-stroke: 0.05vw var(--blue); }
+
+.nav-note {
+  position: absolute;
+  right: 1vw;
+  top: 0.28vw;
+}
+
+.nav-note img {
+  height: 2.43vw;
+  width: auto;
+  display: block;
+  filter: url(#sq-blue);
+}
+
+.nav-note:hover img {
+  filter: url(#sq-teal);
+}
+
+.nav-note.active img {
+  filter: url(#sq-purple);
+}
+
+.profit-text {
+  display: inline-block;
+  transform: translateX(0.935vw);
+}
+
+.txt-profit {
+  -webkit-text-stroke: 0.05vw var(--blue);
+}
+
+.profit-strip {
+  background: var(--teal);
+  border-radius: 0.39vw;
+  padding: 0.15vw 1.5vw;
+  font-size: 1.80vw;
+  font-style: italic;
+  color: var(--purple);
+  letter-spacing: 1.87vw;
+  width: 100%;
+  text-align: center;
+}
+
+/* — CTA BUTTON — */
+
+.cta-btn {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.1vw;
+  font-style: italic;
+  background: var(--light-teal);
+  color: var(--blue);
+  font-family: var(--font);
+  font-weight: 900;
+  font-size: 1.37vw;
+  line-height: 1.15;
+  padding: 0.78vw 0.98vw;
+  border: 0.55vw solid var(--blue);
+  border-radius: 0.85vw;
+  cursor: pointer;
+  text-align: center;
+  white-space: normal;
+  width: 11.72vw;
+  height: 7.81vw;
+}
+
+.cta-chat, .cta-robin {
+  font-size: 2.40vw;
+  letter-spacing: 0.25vw;
+  line-height: 1.1;
+  display: block;
+}
+
+.cta-with {
+  font-size: 1.00vw;
+  letter-spacing: 0.20vw;
+  line-height: 1.1;
+  display: block;
+}
+
+/* — HERO SECTION — */
+
+/* Design base: 2560px wide. Hero = blue rect 915px tall = 35.74vw */
+
+.hero {
+  position: relative;
+  width: 100vw;
+  height: 35.74vw;
+  overflow: hidden;
+}
+
+.hero-blue {
+  position: absolute;
+  left: 0; top: 0;
+  width: 100vw;
+  height: 35.74vw;
+  background: var(--blue);
+  border-radius: 1.5625vw;
+}
+
+.hero-teal {
+  position: absolute;
+  left: 1.953vw; top: 1.953vw;
+  width: 96.094vw;
+  height: 29.883vw;
+  background: var(--teal);
+  border-radius: 1.5625vw;
+}
+
+.panel-left {
+  position: absolute;
+  left: 4.883vw; top: 3.359vw;
+  width: 32.617vw;
+  height: 25.938vw;
+  background: var(--white);
+  border-radius: 1.5625vw;
+}
+
+.panel-right {
+  position: absolute;
+  left: 62.617vw; top: 3.359vw;
+  width: 32.617vw;
+  height: 27.070vw;
+  background: var(--white);
+  border-radius: 1.5625vw;
+}
+
+/* Martin photo: delay 10s */
+.center-photo {
+  position: absolute;
+  left: 40.410vw; top: 3.359vw;
+  width: 19.531vw;
+  height: 24.922vw;
+  overflow: hidden;
+  opacity: 0;
+  animation: fadeUp60 2s ease forwards;
+  animation-delay: 10s;
+}
+
+.center-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.quote-box {
+  position: absolute;
+  left: 40.391vw; top: 28.203vw;
+  width: 19.531vw;
+  height: 3.672vw;
+  background: var(--purple);
+  border-radius: 0.391vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0.3vw 0.2vw;
+  text-align: center;
+}
+
+/* Quote text: delay 20s */
+.q1 { display: block; letter-spacing: 0.30vw; }
+.q2 { display: block; letter-spacing: 0.36vw; }
+
+.quote-text {
+  color: var(--white);
+  font-size: 0.664vw;
+  line-height: 1.3;
+  opacity: 0;
+  animation: fadeUp20 2s ease forwards;
+  animation-delay: 24s;
+}
+
+/* Quote name: delay 26s */
+.quote-name {
+  color: var(--teal);
+  font-size: 0.938vw;
+  letter-spacing: 0.347vw;
+  margin-top: 0.1vw;
+  opacity: 0;
+  animation: fadeUp20 2s ease forwards;
+  animation-delay: 26s;
+}
+
+/* — LEFT PANEL TEXT — */
+
+/* Group 1: delay 0s */
+.txt-trust {
+  position: absolute;
+  left: 7.213vw; top: 5.359vw;
+  font-size: 2.031vw;
+  color: var(--blue);
+  letter-spacing: 0.122vw;
+  line-height: 1.0;
+  opacity: 0;
+  animation: fadeUp60 2s ease forwards;
+  animation-delay: 0s;
+}
+
+.txt-client {
+  position: absolute;
+  left: 6.992vw; top: 9.297vw;
+  font-size: 4.727vw;
+  color: var(--blue);
+  letter-spacing: 2.363vw;
+  line-height: 1.0;
+  opacity: 0;
+  animation: fadeUp60 2s ease forwards;
+  animation-delay: 0s;
+}
+
+.txt-acquisition {
+  position: absolute;
+  left: 7.063vw; top: 13.797vw;
+  font-size: 2.422vw;
+  color: var(--blue);
+  letter-spacing: 1.211vw;
+  line-height: 1.0;
+  opacity: 0;
+  animation: fadeUp60 2s ease forwards;
+  animation-delay: 0s;
+}
+
+/* Group 2: delay 4s (2s anim + 2s hold) */
+.txt-toanyone {
+  position: absolute;
+  left: 7.080vw; top: 18.516vw;
+  font-size: 2.227vw;
+  color: var(--blue);
+  letter-spacing: 0.356vw;
+  line-height: 1.0;
+  opacity: 0;
+  animation: fadeUp60 2s ease forwards;
+  animation-delay: 4s;
+}
+
+.txt-best {
+  position: absolute;
+  left: 6.873vw; top: 21.914vw;
+  font-size: 6.797vw;
+  color: var(--blue);
+  letter-spacing: 2.039vw;
+  line-height: 1.0;
+  opacity: 0;
+  animation: fadeUp60 2s ease forwards;
+  animation-delay: 4s;
+}
+
+/* — RIGHT PANEL TEXT — */
+
+/* Martin Kelly heading: delay 8s */
+.txt-martin-name {
+  position: absolute;
+  left: 64.688vw; top: 5.352vw;
+  font-size: 3.477vw;
+  color: var(--blue);
+  letter-spacing: 0.243vw;
+  line-height: 1.0;
+  opacity: 0;
+  animation: fadeUp60 2s ease forwards;
+  animation-delay: 8s;
+}
+
+/* Facing the World logo: delay 12s */
+.facing-logo {
+  position: absolute;
+  left: 64.688vw; top: 8.086vw;
+  width: 27.070vw;
+  height: 9.063vw;
+  opacity: 0;
+  animation: fadeUp60 2s ease forwards;
+  animation-delay: 12s;
+}
+
+.facing-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* WOULDN'T / HE GOT / TAM MOUDDEN: delay 16s */
+.txt-wouldnt {
+  position: absolute;
+  left: 64.414vw; top: 18.125vw;
+  font-size: 4.453vw;
+  color: var(--blue);
+  letter-spacing: 0.400vw;
+  line-height: 1.0;
+  opacity: 0;
+  animation: fadeUp60 2s ease forwards;
+  animation-delay: 16s;
+}
+
+/* HE GOT + TAM MOUDDEN: delay 20s (WOULDN'T 2s anim + 2s hold) */
+.txt-hegot {
+  position: absolute;
+  left: 71.758vw; top: 23.203vw;
+  font-size: 2.227vw;
+  color: var(--blue);
+  letter-spacing: 1.113vw;
+  line-height: 1.0;
+  opacity: 0;
+  animation: fadeUp60 2s ease forwards;
+  animation-delay: 20s;
+}
+
+.txt-tam {
+  position: absolute;
+  left: 64.492vw; top: 26.211vw;
+  font-size: 3.320vw;
+  color: var(--blue);
+  letter-spacing: 0.299vw;
+  line-height: 1.0;
+  opacity: 0;
+  animation: fadeUp60 2s ease forwards;
+  animation-delay: 20s;
+}
+
+</style>
+</head>
+<body>
+
+<!-- SVG COLOUR + OUTLINE FILTERS FOR SEMIQUAVER -->
+<!-- feMorphology dilate expands the alpha to create outline ring — fill composited on top -->
+<!-- Outline thickness radius="1" matches nav -webkit-text-stroke: 0.05vw -->
+<svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" style="position:absolute;overflow:hidden">
+  <defs>
+
+    <!-- REST: blue fill, purple outline -->
+    <filter id="sq-blue" color-interpolation-filters="sRGB" x="-10%" y="-10%" width="120%" height="120%">
+      <feMorphology in="SourceAlpha" operator="dilate" radius="1" result="b-dilated"/>
+      <feFlood flood-color="#8224c6" result="b-outline-col"/>
+      <feComposite in="b-outline-col" in2="b-dilated" operator="in" result="b-outline"/>
+      <feFlood flood-color="#3366ff" result="b-fill-col"/>
+      <feComposite in="b-fill-col" in2="SourceAlpha" operator="in" result="b-fill"/>
+      <feComposite in="b-fill" in2="b-outline" operator="over"/>
+    </filter>
+
+    <!-- HOVER: cyan fill, purple outline -->
+    <filter id="sq-teal" color-interpolation-filters="sRGB" x="-10%" y="-10%" width="120%" height="120%">
+      <feMorphology in="SourceAlpha" operator="dilate" radius="1" result="t-dilated"/>
+      <feFlood flood-color="#8224c6" result="t-outline-col"/>
+      <feComposite in="t-outline-col" in2="t-dilated" operator="in" result="t-outline"/>
+      <feFlood flood-color="#33ffcc" result="t-fill-col"/>
+      <feComposite in="t-fill-col" in2="SourceAlpha" operator="in" result="t-fill"/>
+      <feComposite in="t-fill" in2="t-outline" operator="over"/>
+    </filter>
+
+    <!-- SELECTED: purple fill, blue outline -->
+    <filter id="sq-purple" color-interpolation-filters="sRGB" x="-10%" y="-10%" width="120%" height="120%">
+      <feMorphology in="SourceAlpha" operator="dilate" radius="1" result="p-dilated"/>
+      <feFlood flood-color="#3366ff" result="p-outline-col"/>
+      <feComposite in="p-outline-col" in2="p-dilated" operator="i
