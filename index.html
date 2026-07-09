@@ -1,9 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
+<html lang="en"><head><meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SurgeonUp</title>
+<title>SurgeonUp | No.1 Cosmetic Surgery Marketing</title>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,900;1,900&display=swap" rel="stylesheet">
 <style>
 
@@ -434,26 +436,110 @@ body {
 
     <!-- REST: blue fill, purple outline -->
     <filter id="sq-blue" color-interpolation-filters="sRGB" x="-10%" y="-10%" width="120%" height="120%">
-      <feMorphology in="SourceAlpha" operator="dilate" radius="1" result="b-dilated"/>
-      <feFlood flood-color="#8224c6" result="b-outline-col"/>
-      <feComposite in="b-outline-col" in2="b-dilated" operator="in" result="b-outline"/>
-      <feFlood flood-color="#3366ff" result="b-fill-col"/>
-      <feComposite in="b-fill-col" in2="SourceAlpha" operator="in" result="b-fill"/>
-      <feComposite in="b-fill" in2="b-outline" operator="over"/>
+      <femorphology in="SourceAlpha" operator="dilate" radius="1" result="b-dilated"></femorphology>
+      <feflood flood-color="#8224c6" result="b-outline-col"></feflood>
+      <fecomposite in="b-outline-col" in2="b-dilated" operator="in" result="b-outline"></fecomposite>
+      <feflood flood-color="#3366ff" result="b-fill-col"></feflood>
+      <fecomposite in="b-fill-col" in2="SourceAlpha" operator="in" result="b-fill"></fecomposite>
+      <fecomposite in="b-fill" in2="b-outline" operator="over"></fecomposite>
     </filter>
 
     <!-- HOVER: cyan fill, purple outline -->
     <filter id="sq-teal" color-interpolation-filters="sRGB" x="-10%" y="-10%" width="120%" height="120%">
-      <feMorphology in="SourceAlpha" operator="dilate" radius="1" result="t-dilated"/>
-      <feFlood flood-color="#8224c6" result="t-outline-col"/>
-      <feComposite in="t-outline-col" in2="t-dilated" operator="in" result="t-outline"/>
-      <feFlood flood-color="#33ffcc" result="t-fill-col"/>
-      <feComposite in="t-fill-col" in2="SourceAlpha" operator="in" result="t-fill"/>
-      <feComposite in="t-fill" in2="t-outline" operator="over"/>
+      <femorphology in="SourceAlpha" operator="dilate" radius="1" result="t-dilated"></femorphology>
+      <feflood flood-color="#8224c6" result="t-outline-col"></feflood>
+      <fecomposite in="t-outline-col" in2="t-dilated" operator="in" result="t-outline"></fecomposite>
+      <feflood flood-color="#33ffcc" result="t-fill-col"></feflood>
+      <fecomposite in="t-fill-col" in2="SourceAlpha" operator="in" result="t-fill"></fecomposite>
+      <fecomposite in="t-fill" in2="t-outline" operator="over"></fecomposite>
     </filter>
 
     <!-- SELECTED: purple fill, blue outline -->
     <filter id="sq-purple" color-interpolation-filters="sRGB" x="-10%" y="-10%" width="120%" height="120%">
-      <feMorphology in="SourceAlpha" operator="dilate" radius="1" result="p-dilated"/>
-      <feFlood flood-color="#3366ff" result="p-outline-col"/>
-      <feComposite in="p-outline-col" in2="p-dilated" operator="i
+      <femorphology in="SourceAlpha" operator="dilate" radius="1" result="p-dilated"></femorphology>
+      <feflood flood-color="#3366ff" result="p-outline-col"></feflood>
+      <fecomposite in="p-outline-col" in2="p-dilated" operator="in" result="p-outline"></fecomposite>
+      <feflood flood-color="#8224c6" result="p-fill-col"></feflood>
+      <fecomposite in="p-fill-col" in2="SourceAlpha" operator="in" result="p-fill"></fecomposite>
+      <fecomposite in="p-fill" in2="p-outline" operator="over"></fecomposite>
+    </filter>
+
+  </defs>
+</svg>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="logo-box">
+    <img src="logo.jpg" alt="SurgeonUp logo">
+  </div>
+  <nav class="nav-center">
+    <div class="nav-links">
+      <a href="#" class="active">HOME</a>
+      <a href="#" class="">SERVICES</a>
+      <a href="#" class="">ABOUT</a>
+      <a href="#" class="">BLOG</a>
+      <a href="#" class="">FAQs</a>
+      <a href="#" class="">CONTACT</a>
+    </div>
+    <div class="profit-strip"><span class="profit-text"><span class="txt-profit">PROFIT</span><span style="color: var(--blue); -webkit-text-stroke: 0.05vw var(--purple);"> OR NO INVESTMENT</span></span></div>
+    <a href="#" class="nav-note"><img src="semiquaver.png" alt="Music"></a>
+  </nav>
+  <button class="cta-btn">
+    <span class="cta-chat">CHAT</span>
+    <span class="cta-with">WITH</span>
+    <span class="cta-robin">ROBIN</span>
+  </button>
+</header>
+
+<!-- HERO: MARTIN FRAME -->
+<section class="hero">
+
+  <div class="hero-blue"></div>
+  <div class="hero-teal"></div>
+  <div class="panel-left"></div>
+  <div class="panel-right"></div>
+
+  <div class="center-photo">
+    <img src="MARTIN.jpg" alt="Martin Kelly, Surgeon">
+  </div>
+
+  <div class="quote-box">
+    <div class="quote-text">
+      <span class="q1">"Tam helped me set up Facing</span>
+      <span class="q2">The World. He is awesome."</span>
+    </div>
+    <div class="quote-name">MARTIN KELLY</div>
+  </div>
+
+  <div class="txt-trust">WOULD YOU TRUST YOUR</div>
+  <div class="txt-client">CLIENT</div>
+  <div class="txt-acquisition">ACQUISITION</div>
+  <div class="txt-toanyone">TO ANYONE BUT THE</div>
+  <div class="txt-best">BEST?</div>
+
+  <div class="txt-martin-name">MARTIN KELLY</div>
+
+  <div class="facing-logo">
+    <img src="FACING-THE-WORLD.jpg" alt="Facing the World">
+  </div>
+
+  <div class="txt-wouldnt">WOULDN'T,</div>
+  <div class="txt-hegot">HE GOT</div>
+  <div class="txt-tam">TAM MOUDDEN</div>
+
+</section>
+
+
+<script>
+/* — NAV ACTIVE STATE — */
+document.querySelectorAll('.nav-links a, .nav-note').forEach(link => {
+  link.addEventListener('click', function() {
+    document.querySelectorAll('.nav-links a, .nav-note').forEach(a => a.classList.remove('active'));
+    this.classList.add('active');
+  });
+});
+</script>
+
+
+
+</body></html>
